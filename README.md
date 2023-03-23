@@ -13,7 +13,7 @@
 
 - 运行测试简单函数: python [test_simple.py](./compile/test_simple.py)
 - 运行测试resnet50: python [test_resnet50.py](./compile/test_resnet50.py)
-- 运行测试简单函数: python  [test_bert.py](./compile/test_bert.py)
+- 运行Huggingface上的BERT模型: python  [test_bert.py](./compile/test_bert.py)
 
 ## Citing PyTorch_Tutorial
 
