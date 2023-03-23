@@ -17,13 +17,17 @@
 """"""
 import torch
 from torchvision import models
+import torch._dynamo
 
 from utils import time_evaluation
 
 model = models.resnet50().cuda()
 
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
-compiled_model = torch.compile(model)
+
+torch._dynamo.reset()
+# compiled_model = torch.compile(model,mode="max-autotune")
+compiled_model = torch.compile(model, mode="reduce-overhead")
 
 input = torch.randn(16, 3, 224, 224).cuda()
 
