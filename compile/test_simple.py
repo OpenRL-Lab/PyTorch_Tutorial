@@ -22,6 +22,7 @@ import torch
 
 from utils import time_evaluation
 
+
 # 一个简单的函数
 def simple_fn(x):
     for _ in range(20):
@@ -29,9 +30,10 @@ def simple_fn(x):
         x = x + y
     return x
 
+
 compiled_fn = torch.compile(simple_fn, backend="inductor")
 
 input_tensor = torch.randn(10000).to(device="cuda:0")
 
 # 测试
-time_evaluation(simple_fn,compiled_fn,input_tensor,None,'简单函数')
+time_evaluation(simple_fn, compiled_fn, input_tensor, None, '简单函数')

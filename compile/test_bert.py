@@ -16,7 +16,6 @@
 
 """"""
 
-
 import torch
 from transformers import BertTokenizer, BertModel
 
@@ -33,8 +32,10 @@ compiled_model = torch.compile(model)
 text = "Hello World!"
 encoded_input = tokenizer(text, return_tensors='pt').to(device="cuda:0")
 
-def exec_fun(model,input):
+
+def exec_fun(model, input):
     model(**input)
 
+
 # 测试
-time_evaluation(model,compiled_model,encoded_input,exec_fun,'BERT')
+time_evaluation(model, compiled_model, encoded_input, exec_fun, 'BERT')

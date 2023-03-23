@@ -20,38 +20,38 @@ import time
 
 import torch
 
-def time_evaluation(origin, compiled, input, exec_func=None, exp_name: str ='',warmup_time: int =5) -> None:
+
+def time_evaluation(origin, compiled, input, exec_func=None, exp_name: str = '', warmup_time: int = 5) -> None:
     torch.cuda.synchronize()
     s_t = time.time()
-    exec_func(origin,input) if exec_func else origin(input)
+    exec_func(origin, input) if exec_func else origin(input)
     torch.cuda.synchronize()
     start_t1 = time.time() - s_t
     print(f"Normal firstly used time:{start_t1}s")
 
     torch.cuda.synchronize()
     s_t = time.time()
-    exec_func(compiled,input) if exec_func else compiled(input)
+    exec_func(compiled, input) if exec_func else compiled(input)
     torch.cuda.synchronize()
     start_t2 = time.time() - s_t
     print(f"Compiled firstly used time:{start_t2}s")
 
-    assert warmup_time>=1
-    for _ in range(warmup_time-1):
+    assert warmup_time >= 1
+    for _ in range(warmup_time - 1):
         exec_func(compiled, input) if exec_func else compiled(input)
-
 
     t_1_total, t_2_total = 0., 0.
     for i in range(10):
         torch.cuda.synchronize()
         s_t = time.time()
-        exec_func(origin,input) if exec_func else origin(input)
+        exec_func(origin, input) if exec_func else origin(input)
         torch.cuda.synchronize()
         t_1 = time.time() - s_t
         t_1_total += t_1
 
         torch.cuda.synchronize()
         s_t = time.time()
-        exec_func(compiled,input) if exec_func else compiled(input)
+        exec_func(compiled, input) if exec_func else compiled(input)
         torch.cuda.synchronize()
         t_2 = time.time() - s_t
         t_2_total += t_2

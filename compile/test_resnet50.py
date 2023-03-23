@@ -28,6 +28,7 @@ compiled_model = torch.compile(model)
 
 input = torch.randn(16, 3, 224, 224).cuda()
 
+
 def exec_func(model, input):
     # 执行训练程序
     optimizer.zero_grad()
@@ -35,5 +36,6 @@ def exec_func(model, input):
     out.sum().backward()
     optimizer.step()
 
+
 # 测试
-time_evaluation(model,compiled_model, input, exec_func,"resnet50")
+time_evaluation(model, compiled_model, input, exec_func, "resnet50")
