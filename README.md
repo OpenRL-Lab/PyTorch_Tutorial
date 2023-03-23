@@ -8,7 +8,7 @@
 
 ## 1. Pytorch 2.0 初探
 
-这部分主要讲`torch.comple()`函数的使用。详细介绍见: [知乎:PyTorch 2.0初探](https://zhuanlan.zhihu.com/p/608527355)
+这部分主要讲`torch.comple()`函数的使用。详细介绍见: [知乎:PyTorch 2.0初探](https://zhuanlan.zhihu.com/p/608527355)。
 以下是一些测试代码，进入`./compile/`文件后通过`python xxx.py`进行运行：
 
 - 运行测试简单函数: python [test_simple.py](./compile/test_simple.py)
