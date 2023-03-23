@@ -20,7 +20,7 @@ import time
 
 import torch
 
-def time_evaluation(origin, compiled, input, exec_func=None, exp_name: str ='',warmup_time: int =1) -> None:
+def time_evaluation(origin, compiled, input, exec_func=None, exp_name: str ='',warmup_time: int =5) -> None:
     torch.cuda.synchronize()
     s_t = time.time()
     exec_func(origin,input) if exec_func else origin(input)
