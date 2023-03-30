@@ -12,8 +12,8 @@
 以下是一些测试代码，进入`./compile/`文件后通过`python xxx.py`进行运行：
 
 - 运行测试简单函数: python [test_simple.py](./compile/test_simple.py)
-- 运行测试resnet50(`model='default'`): python [test_resnet50.py](./compile/test_resnet50.py)
-- 运行测试resnet50(`model='reduce-overhead'`): python [test_resnet50_optimized.py](./compile/test_resnet50_optimized.py)
+- 运行测试resnet50(`mode='default'`): python [test_resnet50.py](./compile/test_resnet50.py)
+- 运行测试resnet50(`mode='reduce-overhead'`): python [test_resnet50_optimized.py](./compile/test_resnet50_optimized.py)
 - 运行Huggingface上的BERT模型: python  [test_bert.py](./compile/test_bert.py)
 
 ## Citing PyTorch_Tutorial
