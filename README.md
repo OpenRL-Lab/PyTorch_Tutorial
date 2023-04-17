@@ -21,10 +21,10 @@
 If you use PyTorch_Tutorial in your work, please cite us:
 
 ```bibtex
-@article{tartrl2023ptt,
+@article{openrl2023ptt,
     title={PyTorch Tutorial},
-    author={TARTRL Contributors},
+    author={OpenRL Contributors},
     year={2023},
-    howpublished={\url{https://github.com/TARTRL/PyTorch_Tutorial}},
+    howpublished={\url{https://github.com/OpenRL-Lab/PyTorch_Tutorial}},
 }
 ```
